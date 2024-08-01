@@ -59,10 +59,10 @@
     map)
   "Keymap for `paw-note-mode'.")
 
-(if (fboundp 'evil-define-key)
-    (evil-define-key 'normal paw-note-mode-map
-      (kbd "&") 'paw-find-origin-in-note
-      (kbd "q") 'paw-note-quit) )
+(with-eval-after-load 'evil
+  (evil-define-key 'normal paw-note-mode-map
+    (kbd "&") 'paw-find-origin-in-note
+    (kbd "q") 'paw-note-quit) )
 
 (define-derived-mode paw-note-mode org-mode "paw-note"
   "Major mode for display word lists.
